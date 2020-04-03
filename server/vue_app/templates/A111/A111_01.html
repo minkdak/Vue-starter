@@ -1,0 +1,67 @@
+{% extends "layout/base_layout.html" %}
+{% block content %}
+	<h2>기본 Jinja2 Loop 출력</h2>
+	<ul>
+		{%- for row in data.list if row.idx < 10 -%}
+			<li>{{row.idx}} : {{row.value}}</li>
+		{%- else -%}
+			<li>no true items or if stop</li>
+		{%- endfor -%}
+	</ul>
+	<hr>
+	{% raw %}
+	<script id="entry-template" type="text/x-handlebars-template">
+		<h2>handlebars Loop 출력</h2>
+		<h4>{{subcomment}}</h4>
+		<ul>
+			{{#each list}}
+			<li>{{idx}} : {{value}}</li>
+			{{/each}}
+		</ul>
+	</script>
+
+	<script id="entry-template2" type="text/x-handlebars-template">
+		<h2>handlebars Loop 출력</h2>
+		<h4>{{subcomment2}}</h4>
+		<ul>
+			{{#each list}}
+			{{#isTest}}
+			<li>{{idx}} : {{value}}</li>
+			{{/isTest}}
+			{{/each}}
+		</ul>
+	</script>
+	{% endraw %}
+	<div id="handlebars-context"></div>
+	<div id="handlebars-context2"></div>
+
+	<script>
+		var jsonData = {
+		    subcomment: "※ 기본 출력",
+			subcomment2: "※ 중간 리스트 breaking",
+		    list: {{ data.list | tojson | safe }}
+		};
+
+		function hbs(sourceId, data, resultId) {
+			var source = $("#"+sourceId).html();
+			var template = Handlebars.compile(source);
+			var html = template(data);
+			$("#"+resultId).empty().append(html);
+		}
+
+		// https://blog.outsider.ne.kr/939 참고
+		Handlebars.registerHelper("isTest", function (options) {
+			if (this.idx < 15) {
+			    return options.fn(this);
+			}
+		});
+
+		$(document).ready(function() {
+			hbs("entry-template", jsonData, 'handlebars-context');
+			hbs("entry-template2", jsonData, 'handlebars-context2');
+			console.log("handlebars run");
+
+
+		});
+	</script>
+{% endblock %}

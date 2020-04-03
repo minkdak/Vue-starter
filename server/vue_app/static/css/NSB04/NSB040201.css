@@ -1,0 +1,263 @@
+    @page
+    {
+        size: auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+
+	html,
+	body {
+		margin: 0px;
+		padding: 0px;
+		font-family: '나눔고딕', '나눔바른고딕', '돋움', Dotum, tahoma, AppleGothic, sans-serif;
+	}
+
+    /* 빈 여백 페이지 발생 방지용 */
+    @media print {
+         html, body {
+            border: 1px solid white;
+            height: 99%;
+            page-break-after: avoid !important;
+            page-break-before: avoid !important;
+         }
+         .print-display-none,
+         .print-display-none * {
+           display: none !important;
+         }
+         .print-visibility-hide,
+         .print-visibility-hide * {
+           visibility: hidden !important;
+         }
+         .printme,
+         .printme * {
+           visibility: visible !important;
+         }
+         .printme {
+           position: absolute;
+           left: 0;
+           top: 0;
+         }
+
+    }
+
+
+
+
+
+
+
+	.ly-estimate {
+		position: relative;
+		font-size: 9pt;
+	}
+
+	.ly-estimate.print {
+		padding-top: 20px;
+		min-height: 600px;
+		position: relative;
+		font-size: 9pt;
+		overflow-y: auto;
+        color:black;
+	}
+	.ly-estimate.print.run {
+		margin: 40px 20px 0px 20px;
+	}
+	.ly-estimate h2 {
+		margin: 0px;
+		text-align: center;
+		font-size: 28px;
+	}
+
+	.ly-estimate .info {
+		overflow: hidden;
+	}
+
+	.ly-estimate .info .cell {
+		padding: 1%;
+		width: 50%;
+		float: left;
+	}
+
+	.ly-estimate .info .cell.align-right {
+		float:right
+	}
+	.ly-estimate .info .cell h3 {
+		font-size: 11pt;
+		font-weight: normal;
+	}
+
+	.ly-estimate .info .cell .customer {
+		text-align: center;
+		padding: 51px 0px 51px 20px;
+		font-size: 11pt;
+	}
+
+	.ly-estimate .info .cell .customer span {
+		display: inline-block;
+		width: 140px;
+		line-height: 28px;
+		border-bottom: 1px solid #000;
+		margin-right: 10px
+	}
+
+	.ly-estimate .info .cell .txt {
+		margin-top: 20px;
+	}
+
+	.ly-estimate .info .cell table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.ly-estimate .info .cell tr {
+		line-height: 20px;
+		font-weight: normal;
+	}
+
+	.ly-estimate .info .cell th {
+		text-align: left;
+		width: 28%;
+		border: 1px solid gray;
+		font-weight: normal;
+		height: 25px;
+		padding-left: 15px;
+		background-color: #eee;
+	}
+
+	.ly-estimate .info .cell td {
+		text-align: right;
+		border: 1px solid gray;
+		padding-right: 15px;
+		height: 25px;
+	}
+	table#company_info td {
+		padding-left:5px;
+	}
+
+	.ly-estimate .info .sign-area {
+		position: absolute;
+		top: 81px;
+		right: 5px;
+		float: left;
+		padding-top: 75px
+	}
+
+	.ly-estimate .goods-info {
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+	}
+
+	.ly-estimate .goods-info table {
+		width: 98%;
+		font-size: 9pt;
+		border-collapse: collapse;
+		margin: auto;
+		padding: 0px;
+	}
+
+	.ly-estimate .goods-info table tr>* {
+		line-height: 30px;
+	}
+
+	.ly-estimate .goods-info table th {
+		border: 1px solid gray;
+		background-color: #eee;
+		text-align: center;
+	}
+
+	.ly-estimate .goods-info table td {
+		padding: 5px;
+		text-align: right;
+		border: 1px solid gray;
+	}
+	.ly-estimate .goods-info table td.text-left {
+		text-align: left !important;
+	}
+	.ly-estimate .goods-info table td.text-right {
+		text-align: right !important;
+	}
+
+	.ly-estimate .goods-info table td:first-child {
+		text-align: left;
+	}
+
+	.ly-estimate .goods-info table td p {
+		padding-left: 10px;
+		font-size: 8pt;
+		color: gray;
+	}
+
+	.ly-estimate .goods-info table td .addopt {
+		display: inline-block;
+		background: #000;
+		color: #dadada;
+		font-size: 8pt;
+		padding: 0px 4px;
+		line-height: 16px;
+		border-radius: 7px;
+	}
+
+	.tot_cont {
+		border: 2px solid #333;
+		text-align: right;
+		width: 97.8%;
+		margin: 10px auto;
+	}
+
+	.tot_cont div {
+		padding: 20px;
+		font-size: 16px;
+	}
+
+	.tot_price {
+		font-size: 20px;
+	}
+
+	.sign {
+		width: 50px;
+	}
+
+	.etimate_notice>p {
+		margin: 0
+	}
+
+	.etimate_notice>p:nth-child(4) {
+		margin-left: 16px;
+	}
+
+    p.customer { color:black; }
+
+    #print_frame input {
+        text-align:center;
+        color:black;
+        background-color:#d0ffff;
+        border:1px solid blue;
+    }
+    #print_frame input.disable {
+        background-color:white;
+        border:0px solid white;
+    }
+    #print_frame input#print_name {width:140px;}
+    #print_frame input#print_y {width:35px;}
+    #print_frame input#print_m {width:20px;}
+    #print_frame input#print_d {width:20px;}
+
+	input:focus::-webkit-input-placeholder {
+		color: transparent;
+	}
+
+	input:focus:-moz-placeholder {
+		color: transparent;
+	}
+
+	/* FF 4-18 */
+
+	input:focus::-moz-placeholder {
+		color: transparent;
+	}
+
+	/* FF 19+ */
+
+	input:focus:-ms-input-placeholder {
+		color: transparent;
+	}

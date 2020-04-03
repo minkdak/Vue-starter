@@ -1,0 +1,49 @@
+{# 추후 메뉴의 자동화를 위해 Controllers 에서 메뉴 목록을 가져오는 방법을 적용하자. #}
+
+<nav id="menu_left" class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+				<div class="dropdown profile-element">
+					<span>
+						<img alt="image" class="img-circle" src="{{ url_for('static', filename='img/top_logo.png') }}" style="width:100%" />
+					</span>
+				</div>
+				<div class="logo-element">
+					<img alt="image" class="img-circle" src="{{ url_for('static', filename='img/top_logo_tumb.png') }}" style="width:80%" />
+				</div>
+			</li>
+			<li id="nav_A111" class="active">
+				<a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse">
+					<li id="nav_A111_01" class="active"><a href="/A111_01">PyMySQL Sucess</a></li>
+					<li id="nav_A111_02"><a href="/A111_02">PyMySQL Error</a></li>
+					<li id="nav_A111_03"><a href="/A111_03">PyMySQL + Redis</a></li>
+					<li id="nav_A111_04"><a href="javascript:void(0)">jqGrid</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
+			</li>
+			<li class="landing_link">
+				<a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
+			</li>
+			<li class="special_link">
+				<a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<script>
+	$(document).ready(function() {
+	    $("#menu_left>div>ul>li").removeClass('active');
+	    $("#menu_left>div>ul>li>ul>li").removeClass('active');
+
+		navall = $(location).attr('pathname').substring(1).split('/');
+		nav1th = navall[0].split('_')[0];
+		{#alert(nav[0]+" "+nav[1]);#}
+		$("#nav_"+nav1th).addClass('active');
+		$("#nav_"+navall[0]).addClass('active');
+	});
+</script>

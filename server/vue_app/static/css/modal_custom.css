@@ -1,0 +1,79 @@
+/* 모달 커스텀 */
+.modal { text-align: center; }
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+.modal-dialog { display: inline-block; text-align: left; vertical-align: middle;}
+
+/* 모달 본문에 테이블이 존재하는 경우 자동 스크롤 지정 */
+.modal-inner-table-fix {
+    overflow-y:auto;
+    max-height:240px;
+    background-color: white;
+    padding:5px;
+}
+/* 리스트 페이징 표기용 여백 지정 */
+.modal-inner-list-paginate {
+    height: auto;
+    background-color: white;
+    padding: 20px 0px 5px 0px;
+    /*border-top: 1px solid #f5f5f6;*/
+}
+/* 모바일 때 본문의 여백문제가 생길경우 좌우 여백을 좁개 지정 */
+.modal-body-small-padding {
+    padding:20px 15px;
+}
+/* 좌우 배치용 구분 border */
+.modal-border-left { border-left:1px solid #e5e5e5; }
+.modal-border-right { border-right:1px solid #e5e5e5; }
+
+/* 모달 검색부분의 input input-sm 여러개 인경우 하단 여백 주기 */
+.modal-bottom-sm {
+    margin-bottom:2px;
+}
+
+/* 모달 아닌 커스텀 팝업 레이어 */
+.modal-custom {
+    position:fixed;
+    top: 50%;
+    left: 0%;
+    margin:10px;
+    padding: 5px;
+    z-index:1100;
+
+    /*width: 100%;*/
+    /*width: -moz-available;          !* WebKit-based browsers will ignore this. *!*/
+    /*width: -webkit-fill-available;  !* Mozilla-based browsers will ignore this. *!*/
+    /*width: fill-available;*/
+
+    max-width: 1500px;
+
+    /*height:min-content;*/
+    overflow-y:auto;
+    max-height: 95vh;
+
+    border:3px solid lightgray;
+    background-color:white;
+    border-radius:5px;
+    -moz-box-shadow: 7px 7px 7px 0px #999;
+    -webkit-box-shadow: 7px 7px 7px 0px #999;
+    box-shadow: 7px 7px 7px 0px #999;
+}
+
+@media (max-width: 768px) {
+   .modal-custom {
+        top: 0px;
+        overflow-y:auto;
+        /*height: -moz-available;          !* WebKit-based browsers will ignore this. *!*/
+        /*height: -webkit-fill-available;  !* Mozilla-based browsers will ignore this. *!*/
+        /*height: fill-available;*/
+        max-width: calc(100% - 20px);
+        min-height: calc(100vh - 20px);
+        max-height: calc(100vh - 20px);
+   }
+}

@@ -1,0 +1,83 @@
+{# 랜덤 문자열 #}
+{%- macro random_int(len) -%}
+	{%- for _ in range(len) -%}
+		{{ range(10) | random }}
+	{%- endfor -%}
+{%- endmacro -%}
+{%- macro random_grade() -%}
+	{{ ['최고관리자','관리자','사원','사원','사원','사원'] | random }}
+{%- endmacro -%}
+{%- macro random_part() -%}
+	{{ ['웹개발연구소','디바이스마트','구매팀','물류팀','영업팀','IT마케팅','101도','경영지원','로봇연구소'] | random }}
+{%- endmacro -%}
+{%- macro random_str(len) -%}
+	{% set str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' %}
+	{%- for _ in range(len) -%}
+		{{ str | random }}
+	{%- endfor -%}
+{%- endmacro -%}
+{%- macro random_name() -%}
+	{{ ['홍길동','김민준','서지후','임현우','박준서','이우진','김동현','채준영','최민석','윤성호','장민재','김영철','오성진'] | random }}
+{%- endmacro -%}
+{%- macro random_company() -%}
+	{{ [
+		'태웅','뉴티씨','진영콘텍','스카이홀릭','피지오랩','백경상사','대화기전','하이텍로직','넥스젠파워','타이니로보','예일전자','광세미콘탁터','기흥반도체'
+		,'강원전자 주식회사','(주)우리종합계측기','마로로봇','대하코퍼레이션','고산무역','오렌지반도체','엠트로닉스','(주)에듀키트'
+		] | random }}
+{%- endmacro -%}
+
+{%- macro random_supply() -%}
+	{{ ['창고 1','창고 2','창고 3','창고 4','사무실 1','구로 1', '주안2'] | random }}
+{%- endmacro -%}
+
+{# 페이징 html #}
+{%- macro list_paginate(idx=1, len=10) -%}
+	<nav>
+		<ul class="pagination pagination-sm">
+			<li>
+				<a href="#" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			{%- for _ in range(len) -%}
+				{%- if idx == loop.index -%}
+					<li class="active"><a href="#">{{ loop.index }}</a></li>
+				{% else %}
+					<li><a href="#">{{ loop.index }}</a></li>
+				{% endif %}
+			{%- endfor -%}
+			<li>
+				<a href="#" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+{%- endmacro -%}
+
+{# 엑셀 다운로드 안내 Modal #}
+{%- macro excel_help() -%}
+	<div class="modal inmodal" id="help-excel-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span
+							aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h1 class="modal-title">엑셀 다운로드 안내</h1>
+				</div>
+				<div class="modal-body">
+					<p><strong>* 선택 체크 시 선택된 항목만 엑셀로 출력</strong></p>
+					<p><strong>* 체크된 항목 없을 시 검색결과 전체 엑셀로 출력</strong></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+{%- endmacro -%}
+
+
+
+
+

@@ -1,0 +1,12 @@
+{% extends "layout/base_layout.html" %}
+{% block content %}
+	<h2>기본 Jinja2 Loop 출력 : {{ data.dbtype }}</h2>
+	<div>Redis에 키가 존재하는 경우 10초 동안 유지시키고 삭제 합니다.</div>
+	<ul>
+		{%- for row in data.list if row.idx < 10 -%}
+			<li>{{row.idx}} : {{row.value}}</li>
+		{%- else -%}
+			<li>no true items or if stop</li>
+		{%- endfor -%}
+	</ul>
+{% endblock %}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{data.title or 'Ntrex 장부 ERP'}}</title>
+
+	<!-- Mainly Style -->
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+
+	{#<link href="{{ url_for('static', filename='css/custom_style.css') }}" rel="stylesheet">#}
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/side_style.css') }}" rel="stylesheet">
+	   <link href="{{ url_for('static', filename='css/modal_custom.css') }}" rel="stylesheet">
+
+	<link href="{{ url_for('static', filename='css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css') }}" rel="stylesheet">
+
+	<!-- Mainly scripts -->
+	<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/handlebars.min-v4.7.2.js') }}"></script>
+
+	<!-- Peity -->
+	<script src="{{ url_for('static', filename='js/plugins/peity/jquery.peity.min.js') }}"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="{{ url_for('static', filename='js/inspinia.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/pace/pace.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/jquery-ui/jquery.ui.touch-punch.min.js') }}"></script>
+
+	{# 공통 스크립트 #}
+	<script src="{{ url_for('static', filename='js/NSB_common.js') }}"></script>
+</head>
+<body>
+<div class="wrapper">
+	{# 기본 메크로 #}
+	{% import 'layout/base_macro.html' as cm %}
+	{# Sidebar #}
+	{% include 'layout/base_nav_menu.html' ignore missing %}
+	{# Content #}
+	<div id="page-wrapper" class="gray-bg">
+		{# Content Top #}
+		{% include 'layout/base_nav_top.html' ignore missing %}
+
+		{% block content %}{% endblock %}
+		<div class="row">
+			<div class="col-lg-12">
+				{% block footer %}
+				{% endblock %}
+			</div>
+		</div>
+
+		{# Content Footer #}
+		<div class="footer">
+			<div class="text-right"><strong>Copyright</strong> NTREX &copy; 2020</div>
+		</div>
+	</div>
+</div>
+
+{# 체크박스, 라디오버튼을 위한 style, script 용 #}
+<link href="{{ url_for('static', filename='css/plugins/iCheck/custom.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/plugins/iCheck/icheck.min.js') }}"></script>
+
+{# 테이블 sort를 위한 footable 라이브러리 사용 #}
+<script src="{{ url_for('static', filename='js/plugins/footable/footable.all.min.js') }}"></script>
+<link href="{{ url_for('static', filename='css/plugins/footable/footable.core.css') }}" rel="stylesheet">
+
+{# datepicker를 위한 style, script 용 #}
+<link href="{{ url_for('static', filename='css/plugins/datapicker/datepicker3.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/plugins/datapicker/bootstrap-datepicker.js') }}"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		SideBarAddClick();  // Top Sidebar 접기 버튼 Toggle 이베트
+		//SetFormDecoFirstInit();   // 반영이 안되는 구간이 존재하여 각 페이지에서 호출이 필요
+	});
+</script>
+
+</body>
+</html>

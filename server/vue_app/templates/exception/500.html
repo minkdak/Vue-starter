@@ -1,0 +1,6 @@
+{% extends "layout/base_layout.html" %}
+{% block content %}
+500 Error
+	{{ data.e or "서버 에러 발생" }}
+	{{ data.et or "서버 에러 발생2" }}
+{% endblock %}

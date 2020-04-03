@@ -1,0 +1,17 @@
+# pycharm config
+/.idea
+/.idea/
+
+# log file
+/_logs/*.log
+/_logs/*.log.*
+
+# python cache
+*.py[co]
+**/*.py[co]
+**/__pycache__/
+
+# empty folder
+!/logs/.keep
+!/vue_app/.keep
+/vue_app/__init__backup.py

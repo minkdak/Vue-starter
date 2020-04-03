@@ -1,0 +1,159 @@
+{# 추후 메뉴의 자동화를 위해 Controllers 에서 메뉴 목록을 가져오는 방법을 적용하자. #}
+
+<nav id="sidebar">
+	<div class="sidebar-header">
+		<div>NTREX 장부 ERP</div>
+	</div>
+	<ul class="list-unstyled components">
+		{#<p>Dummy Heading</p>#}
+		<li id="nav_NSB02">
+			<a href="#NSB02" data-toggle="collapse" aria-expanded="false"><i class="fa fa-users left-menu-icon"></i> &nbsp; 회원</a>
+			<ul class="collapse list-unstyled" id="NSB02">
+				<li id="nav_NSB020100"><a href="/NSB020100">회원관리</a></li>
+				<li id="nav_NSB020200"><a href="/NSB020200">로그인 오류 신청</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB03">
+			<a href="#NSB03" data-toggle="collapse" aria-expanded="false"><i class="fa fa-database left-menu-icon"></i> &nbsp; 상품</a>
+			<ul class="collapse list-unstyled" id="NSB03">
+				<li id="nav_NSB030100"><a href="/NSB030100">상품 목록</a></li>
+			</ul>
+		</li>
+
+		<li id="nav_NSB07">
+			<a href="#NSB07" data-toggle="collapse" aria-expanded="false"><i class="fa fa-link left-menu-icon"></i> &nbsp; 거래처</a>
+			<ul class="collapse list-unstyled" id="NSB07">
+				<li id="nav_NSB070100"><a href="/NSB070100">거래처 관리</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB08">
+			<a href="#NSB08" data-toggle="collapse" aria-expanded="false"><i class="fa fa-cube left-menu-icon"></i> &nbsp; 재고위치</a>
+			<ul class="collapse list-unstyled" id="NSB08">
+				<li id="nav_NSB080100"><a href="/NSB080100">재고위치 관리</a></li>
+			</ul>
+		</li>
+
+		<li id="nav_NSB04">
+			<a href="#NSB04" data-toggle="collapse" aria-expanded="false"><i class="fa fa-clipboard left-menu-icon"></i> &nbsp; 견적</a>
+			<ul class="collapse list-unstyled" id="NSB04">
+				<li id="nav_NSB040100"><a href="/NSB040100">견적 관리</a></li>
+				<li id="nav_NSB040200"><a href="/NSB040200">견적서 출력</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB05">
+			<a href="#NSB05" data-toggle="collapse" aria-expanded="false"><i class="fa fa-indent left-menu-icon"></i> &nbsp; 수주</a>
+			<ul class="collapse list-unstyled" id="NSB05">
+				<li id="nav_NSB050100"><a href="/NSB050100">수주 목록</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB06">
+			<a href="#NSB06" data-toggle="collapse" aria-expanded="false"><i class="fa fa-outdent left-menu-icon"></i> &nbsp; 발주</a>
+			<ul class="collapse list-unstyled" id="NSB06">
+				<li id="nav_NSB060100"><a href="/NSB060100">발주 관리</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB09">
+			<a href="#NSB09" data-toggle="collapse" aria-expanded="false"><i class="fa fa-cloud-download left-menu-icon"></i> &nbsp; 입고</a>
+			<ul class="collapse list-unstyled" id="NSB09">
+				<li id="nav_NSB090100"><a href="/NSB090100">입고 관리</a></li>
+				<li id="nav_NSB090200"><a href="/NSB090200">입고 매입가 등록</a></li>
+				<li id="nav_NSB090300"><a href="/NSB090300">매입처별 입고 대기 출력</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB10">
+			<a href="#NSB10" data-toggle="collapse" aria-expanded="false"><i class="fa fa-rocket left-menu-icon"></i> &nbsp; 출고</a>
+			<ul class="collapse list-unstyled" id="NSB10">
+				<li id="nav_NSB100100"><a href="/NSB100100">출고 관리</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB11">
+			<a href="#NSB11" data-toggle="collapse" aria-expanded="false"><i class="fa fa-list-alt left-menu-icon"></i> &nbsp; 입출고현황</a>
+			<ul class="collapse list-unstyled" id="NSB11">
+				<li id="nav_NSB110100"><a href="/NSB110100">입출고 현황</a></li>
+			</ul>
+		</li>
+		<li id="nav_NSB12">
+			<a href="NSB120100"><i class="fa fa-file-text-o left-menu-icon"></i> &nbsp; 거래처원장</a>
+			{#
+			<a href="#NSB12" data-toggle="collapse" aria-expanded="false"><i class="fa fa-file-text-o left-menu-icon"></i> &nbsp; 거래처원장</a>
+			<ul class="collapse list-unstyled" id="NSB12">
+				<li id="nav_NSB120100"><a href="NSB120100">거래처원장</a></li>
+			</ul>
+			#}
+		</li>
+		<li>
+			<a href="javascript:void(0);">------------ 이후 샘플 ------------</a>
+		</li>
+		<li id="nav_A111">
+			<a href="#A111" data-toggle="collapse" aria-expanded="false">Example DB Test</a>
+			<ul class="collapse list-unstyled" id="A111">
+				<li id="nav_A111_01"><a href="/A111_01">PyMySQL</a></li>
+				<li id="nav_A111_02"><a href="/A111_02">PyMySQL Error</a></li>
+				<li id="nav_A111_03"><a href="/A111_03">PyMySQL + Redis</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="list-unstyled CTAs">
+		<li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+		<li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+	</ul>
+</nav>
+
+{# 링크 안내용 모달 팝업 #}
+<div class="modal inmodal fade" id="LinkMsgModal" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		// URL을 메뉴 항목으로 파싱
+		var navall = $(location).attr('pathname').substring(1).split('/')[0];
+		if (/^[ABC]/.test(navall)) {   // 테스트 주소 일 때
+			nav1th = navall.split('_')[0];
+        } else if (/^NSB/.test(navall)) {  // 화면 ID 별 호출일 때
+		   // console.log("화면ID 진입");
+			var nav1th = navall.substring(0, 5);
+		} else {
+			// 샘플로 출력을 시켜 봅니다.
+			var navall = "NSB010100";
+			var nav1th = navall.substring(0, 5);
+			//console.log(nav1th, navall);
+		}
+		// URL에 맞추어 메뉴 선택 시키기
+		$("#sidebar li").removeClass('active');
+		$("#nav_" + nav1th + ">a").click();
+		$("#nav_" + nav1th).addClass('active');
+		$("#nav_" + navall + ">a").attr('aria-expanded', 'true');
+
+		//console.log(nav1th, navall);
+	});
+
+	// Link 테스트용 모달창 호출
+	function ModalMessageSend(titl, msg) {
+	    $("#LinkMsgModal .modal-title").html(titl);
+	    $("#LinkMsgModal .modal-body").html(msg);
+	    $("#LinkMsgModal").modal();
+	}
+	// 테스트용 준비중 모달창 호출
+	function ModalReadyMessageSend() {
+	    $("#LinkMsgModal .modal-title").html("페이지 준비안내");
+	    $("#LinkMsgModal .modal-body").html("<div class='text-center'><h2><strong>페이지 시안 준비중입니다.</strong></h2></div>");
+	    $("#LinkMsgModal").modal();
+	}
+</script>

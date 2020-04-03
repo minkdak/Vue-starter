@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{data.title or 'Ntrex 장부 ERP'}}</title>
+
+	<!-- Mainly Style -->
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+
+	{#<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">#}
+	<link href="{{ url_for('static', filename='css/side_style.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/custom_style.css') }}" rel="stylesheet">
+
+	<link href="{{ url_for('static', filename='css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css') }}" rel="stylesheet">
+
+	<!-- Mainly scripts -->
+	<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/handlebars.min-v4.7.2.js') }}"></script>
+
+	<!-- Peity -->
+	<script src="{{ url_for('static', filename='js/plugins/peity/jquery.peity.min.js') }}"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="{{ url_for('static', filename='js/inspinia.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/pace/pace.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+</head>
+<body class="gray-bg">
+	<div class="middle-box text-center loginscreen animated fadeInDown">
+		<div>
+			<div style="margin-left: -110px;"><h1 class="logo-name">NTREX</h1></div>
+			<h3>NTREX 장부 Intranet</h3>
+			<p></p>
+			<p></p>
+			<form class="m-t" role="form" action="/">
+				<div class="form-group">
+					<input type="id" class="form-control" placeholder="ID" required="">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password" required="">
+				</div>
+				<button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+{#				<a href="#"><small>Forgot password?</small></a>#}
+{#				<p class="text-muted text-center"><small>Do not have an account?</small></p>#}
+				<button type="button" class="btn btn-white btn-block" data-toggle="modal" data-target="#myModal">
+					로그인 오류 문의
+				</button>
+			</form>
+			<p class="m-t"> <small>Copyright 2020. NTREX. All Rights Reserved</small> </p>
+		</div>
+	</div>
+
+	<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+		<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<i class="fa fa-laptop modal-icon"></i>
+					<h4 class="modal-title">로그인 오류 문의</h4>
+					<small class="font-bold">로그인 오류 증상을 상세히 기재해주세요.</small>
+				</div>
+				<div class="modal-body">
+					<p><strong>ID를 정확히 입력해주세요.</strong> 로그인 실패 증세나 시도 일시를 기재해 주세요.</p>
+					<div class="form-group"><label>ID</label> <input type="text" class="form-control" placeholder="ID"></div>
+					<div class="form-group">
+						<label>내용</label>
+						<textarea class="form-control" placeholder="로그인 실패 내용" rows="5"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
