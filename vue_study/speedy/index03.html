@@ -15,7 +15,8 @@
 -->
 <div id="app">
 	<h1>Hello, {{ name }}</h1>
-	<h3><input type="checkbox" v-model="smile"/>웃어요 개구리</h3>
+    <input type="text" v-model="name"/>
+	<h3><input type="checkbox" v-model="smile" checked/>웃어요 개구리</h3>
 	<img :src="smile ? feelsgood : feelsbad"/>
 </div>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -30,7 +31,7 @@
         data: {
             name: 'Vue',
             feelsgood: 'https://pds.joins.com/news/component/gamemeca/201811/03/20181103052224.jpg',
-            feelsbad: 'http://imgh.us/feelsbad.jpg'
+            feelsbad: 'http://www.etoland.co.kr/data/daumeditor02/200104/80456815781318660.jpg'
         }
     });
 </script>
