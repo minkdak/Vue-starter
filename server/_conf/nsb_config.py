@@ -9,7 +9,7 @@ run_env = os.getenv('PYTHON_ENV') if os.getenv('PYTHON_ENV') != None else 'devel
 
 # Controllers 에서 읽을 모듈명 접두사
 controller_prefix = ['NSB']         # 절대 수정하지 말 것
-controller_prefix += ['A', 'B','C'] # 테스트 / 기본 템플릿 적용 확인용
+controller_prefix += ['A', 'B','C','vue'] # 테스트 / 기본 템플릿 적용 확인용
 
 # 로그 파일명(dict)
 logname = dict(

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>JS Bin</title>
+</head>
+<body>
+<!--
+예제 1번
+<div id="app">
+    <h1>Hello, {{ name }}</h1>
+    <input type="text" v-model="name"/>
+  </div>
+-->
+<div id="app">
+	<h1>Hello, {{ name }}</h1>
+	<h3><input type="checkbox" v-model="smile"/>웃어요 개구리</h3>
+	<img :src="smile ? feelsgood : feelsbad"/>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    /*
+	* v-model 디렉티브
+	* : 단방향 데이터 바인딩 대신 양방향 데이터 바인딩이 가능하게 해줌
+	* */
+    var app = new Vue({
+        el: '#app', // 어떤 엘리먼트에 적용을 할 지 정합니다
+        // data 는 해당 뷰에서 사용할 정보를 지닙니다
+        data: {
+            name: 'Vue',
+            feelsgood: 'https://pds.joins.com/news/component/gamemeca/201811/03/20181103052224.jpg',
+            feelsbad: 'http://imgh.us/feelsbad.jpg'
+        }
+    });
+</script>
+</body>
+</html>

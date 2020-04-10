@@ -36,7 +36,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(
 from _conf.nsb_config import controller_prefix  # Controllers 에서 읽어 들일 모듈의 접두사(리스트로 지정 되어 있음)
 alllist = ['main']  # main 을 기본을 지정
 for c_prefix in controller_prefix:
-	alllist.extend([os.path.splitext(file)[0] for file in os.listdir('./nsb_web/Controllers') if file.endswith(".py") and re.search('^'+c_prefix, file)])
+	alllist.extend([os.path.splitext(file)[0] for file in os.listdir('./vue_app/Controllers') if file.endswith(".py") and re.search('^'+c_prefix, file)])
 
 # 자동 로드할 모듈 명 지정
 __all__ = alllist

@@ -3,4 +3,4 @@
 
 from vue_app import app
 
-app.run(host='0.0.0.0', port='2357', threaded=True)
+app.run(host='0.0.0.0', port='2358', threaded=True)

@@ -19,3 +19,4 @@ app.add_url_rule('/', None, main.index)
 
 # 로그인
 # app.add_url_rule('/NSB010100', None, NSB01.NSB010100)    # 로그인 폼
+app.add_url_rule('/vue', None, vue01.vue0100)

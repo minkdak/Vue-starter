@@ -39,7 +39,7 @@ function IboxInputUISet(obj) {
 
 // Handlebars 의 리스트 형식 체우기
 function hbs(sourceId, data, resultId, callback) {
-	var source = $("#"+sourceId).html();
+	var source = $("#"+sourceId).html(); // handlebars templates script html
 	var template = Handlebars.compile(source);
 	var html = template(data);
 	$("#"+resultId).empty().append(html);
